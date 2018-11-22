@@ -1,6 +1,6 @@
 <template lang="pug">
   div(style="margin: 200px;")
-    steps(:current='current')
+    steps(:current='current', direction="horizontal")
         step(title='Title1', content='Content1')
         step(title='Title2', content='Content2')
         step(title='Title3', content='Content3')
@@ -48,19 +48,12 @@ export default {
   },
   methods: {
     next() {
-      if (this.current == 3) {
+      if (this.current === 3) {
         this.current = 0;
       } else {
         this.current += 1;
       }
     }
   },
-  mounted: () => {
-    iView: {
-      steps: {
-        direction: "vertical";
-      }
-    }
-  }
 };
 </script>
